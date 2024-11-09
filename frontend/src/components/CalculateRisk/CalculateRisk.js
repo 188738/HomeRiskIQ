@@ -27,11 +27,16 @@ function CalculateRisk() {
           onChange={handleAddressChange}
           placeholder="Enter land address"
         />
+        <br>
         
+        </br>
+        <button type="submit" onSubmit={handleSubmit} className="button">Calculate Risk Score</button>
       </form>
       <br>
       </br>
-      <button type="submit" onSubmit={handleSubmit}>Calculate Risk Score</button>
+
+      
+      
 
       
 
