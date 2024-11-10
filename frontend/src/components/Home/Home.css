@@ -76,7 +76,7 @@ h2 {
 }
 
 .cta-button {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     color: white;
     border:none;
     padding:.8rem; 
@@ -88,7 +88,7 @@ h2 {
 }
 
 .cta-button:hover {
-    background-color:#d35400;
+    background-color:#0b0909;
 }
 
 @media (max-width:768px) {
