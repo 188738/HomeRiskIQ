@@ -18,7 +18,7 @@ function CalculateRisk() {
         map.current = new maplibregl.Map({
             container: mapContainer.current,
             style: 'https://maps.geoapify.com/v1/styles/osm-bright/style.json?apiKey=582182be321d45428b988206666bcd85',
-            center: [-100.267875, 39.806698],
+            center: [-98.583333, 39.833333], //centre location for US
             zoom: 2
         });
 
@@ -36,25 +36,26 @@ function CalculateRisk() {
     }, []);
 
     const handleMapClick = async (e) => {
-        const { lng, lat } = e.lngLat;
+        const { lng, lat } = e.lngLat; //the latitude and longitude information about the location
         setSelectedCoords({ lng, lat });
 
-        // Remove existing marker if it exists
+        //remove existing marker if it exists
         if (markerRef.current) {
             markerRef.current.remove();
         }
 
-        // Create and add new marker
+        //create and add new marker
         const newMarker = new Marker()
             .setLngLat([lng, lat])
             .addTo(map.current);
 
-        // Update markerRef with the new marker
+        //update markerRef with the new marker
         markerRef.current = newMarker;
 
         await reverseGeocode(lng, lat);
     };
 
+    //get the information about the location through the latitude and longitude (reverse geocoding)
     const reverseGeocode = async (lng, lat) => {
         try {
             const response = await fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&apiKey=582182be321d45428b988206666bcd85`);
@@ -98,7 +99,7 @@ function CalculateRisk() {
                     id="address"
                     value={address}
                     onChange={handleAddressChange}
-                    placeholder="Enter land address or click on the map"
+                    placeholder="Street, City, State Zip Code, United States of America"
                 />
                 <div ref={mapContainer} className="map-container"></div>
                 {selectedCoords && (

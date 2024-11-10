@@ -1,6 +1,5 @@
-/* Navbar styling */
 nav {
-  background-color: #007acc; /* Soft blue color for navbar */
+  background-color: #e3e9ed; /* Soft blue color for navbar */
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
 }
@@ -19,18 +18,14 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+  padding: 0.5rem; /* Add padding for better click area */
 }
 
-nav ul li a:hover {
-  color: #ffdd57; /* Light yellow on hover */
-}
-
-/* Mobile-friendly navbar */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
