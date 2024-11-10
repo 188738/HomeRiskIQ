@@ -1,20 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react'
+// import { useState } from 'react'
 import './Home.css';
 
 function Home() {
-    const [address, setAddress] = useState('');
-    const handleAddressChange = (e) => {
-        setAddress(e.target.value);
-      };
+    // const [address, setAddress] = useState('');
+    // const handleAddressChange = (e) => {
+    //     setAddress(e.target.value);
+    //   };
     
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle the address submission here
-        console.log("Submitted address:", address);
-        // You could add logic here to fetch risk score based on address
-      };
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // Handle the address submission here
+    //     console.log("Submitted address:", address);
+    //     // You could add logic here to fetch risk score based on address
+    //   };
   return (
     <div className="home">
       <header className="home-header">
